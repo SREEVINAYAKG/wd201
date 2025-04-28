@@ -95,7 +95,7 @@ module.exports = (sequelize, DataTypes) => {
         this.dueDate === new Date().toISOString().split("T")[0]
           ? ""
           : this.dueDate;
-      return `${this.id}. ${checkbox} ${this.title} ${date}`;
+      return `${this.id}. ${checkbox} ${this.title} ${date}`.trim();
     }
   }
   Todo.init(
