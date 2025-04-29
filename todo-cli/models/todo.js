@@ -36,6 +36,7 @@ module.exports = (sequelize, DataTypes) => {
             [Op.lt]: new Date().toISOString().split("T")[0],
           },
         },
+        order: [["id", "ASC"]],
       });
       todos.forEach((todo) => {
         console.log(todo.displayableString());
@@ -50,6 +51,7 @@ module.exports = (sequelize, DataTypes) => {
             [Op.eq]: new Date().toISOString().split("T")[0],
           },
         },
+        order: [["id", "ASC"]],
       });
       todos.forEach((todo) => {
         console.log(todo.displayableString());
@@ -65,6 +67,7 @@ module.exports = (sequelize, DataTypes) => {
             [Op.gt]: new Date().toISOString().split("T")[0],
           },
         },
+        order: [["id", "ASC"]],
       });
       todos.forEach((todo) => {
         console.log(todo.displayableString());
