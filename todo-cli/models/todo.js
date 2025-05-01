@@ -15,17 +15,23 @@ module.exports = (sequelize, DataTypes) => {
       console.log("My Todo list \n");
 
       console.log("Overdue");
-      await Todo.overdue();
+      // await Todo.overdue();
+      const overdue = await Todo.overdue();
+      // overdue.forEach(todo => console.log(todo.displayableString()));
       // FILL IN HERE
       console.log("\n");
 
       console.log("Due Today");
-      await Todo.dueToday();
+      const dueToday = await Todo.dueToday();
+      // dueToday.forEach(todo => console.log(todo.displayableString()));
+      // await Todo.dueToday();
       // FILL IN HERE
       console.log("\n");
 
       console.log("Due Later");
-      await Todo.dueLater();
+      const dueLater = await Todo.dueLater();
+      // dueLater.forEach(todo => console.log(todo.displayableString()));
+      // await Todo.dueLater();
       // FILL IN HERE
     }
 
@@ -41,6 +47,7 @@ module.exports = (sequelize, DataTypes) => {
       todos.forEach((todo) => {
         console.log(todo.displayableString());
       });
+      return todos;
       // FILL IN HERE TO RETURN OVERDUE ITEMS
     }
 
@@ -56,7 +63,7 @@ module.exports = (sequelize, DataTypes) => {
       todos.forEach((todo) => {
         console.log(todo.displayableString());
       });
-
+      return todos;
       // FILL IN HERE TO RETURN ITEMS DUE tODAY
     }
 
@@ -72,7 +79,7 @@ module.exports = (sequelize, DataTypes) => {
       todos.forEach((todo) => {
         console.log(todo.displayableString());
       });
-
+      return todos;
       // FILL IN HERE TO RETURN ITEMS DUE LATER
     }
 
