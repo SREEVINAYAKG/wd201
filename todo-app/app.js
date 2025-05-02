@@ -63,10 +63,10 @@ app.delete("/todos/:id", async function (request, response) {
                 id: request.params.id,
             },
         })
-        return response.json({success:deletedCount > 0});
+        return response.json(deletedCount > 0);
     }catch(error){
-        console.log(error);
-        return response.json({success:false});  
+        // console.log(error);
+        return response.json(false);  
     }
   // First, we have to query our database to delete a Todo by ID.
   // Then, we have to respond back with true/false based on whether the Todo was deleted or not.
