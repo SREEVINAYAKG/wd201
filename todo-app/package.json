@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start":"nodemon -e js,ejs",
-    "start:prod":"node index.js",
+    "start": "nodemon -e js,ejs",
+    "start:prod": "node index.js",
     "pretest": "NODE_ENV=test npx sequelize-cli db:drop && NODE_ENV=test npx sequelize-cli db:create",
     "test": "NODE_ENV=test jest --detectOpenHandles",
     "prepare": "husky"
@@ -19,13 +19,16 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "cookie-parser": "^1.4.7",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "pg": "^8.15.6",
-    "sequelize": "^6.37.7"
+    "sequelize": "^6.37.7",
+    "tiny-csrf": "^1.1.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.1",
+    "cheerio": "^1.0.0",
     "eslint": "^9.25.1",
     "globals": "^16.0.0",
     "husky": "^9.1.7",

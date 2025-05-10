@@ -18,10 +18,22 @@ module.exports = (sequelize, DataTypes) => {
     static getTodos(){
       return this.findAll();
     }
-
-    markAsCompleted(){
-      return this.update({completed:true})
+    static async remove(id){
+      return this.destroy({
+        where:{
+          id,
+        }
+      })
     }
+
+    // markAsCompleted(){
+    //   return this.update({completed:true})
+    // }
+
+    async setCompletionStatus(completed) {
+      return this.update({ completed });
+    }
+
   }
   Todo.init({
     title: DataTypes.STRING,
