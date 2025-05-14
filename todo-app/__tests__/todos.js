@@ -76,6 +76,53 @@ describe("Todo Application", function () {
 //------------------------------------------------------------------//
 
 test("Marks a todo with the given ID as complete", async () => {
+
+//   let res = await agent.get("/todos");
+//   let csrfToken = extractCsrfToken(res);
+//   await agent.post("/todos").send({
+//     title: "Buy milk",
+//     dueDate: new Date().toISOString(),
+//     completed: false,
+//     _csrf: csrfToken,
+//   });
+//   const gropuedTodosResponse = await agent
+//     .get("/")
+//     .set("Accept", "application/json");
+//   if (gropuedTodosResponse.headers['content-type'].includes('application/json')) {
+//   const parsedGroupedResponse = JSON.parse(gropuedTodosResponse.text);
+//   const dueTodayCount = parsedGroupedResponse.allTodos.length;
+//   const latestTodo = parsedGroupedResponse.allTodos[dueTodayCount - 1];
+//   const status = latestTodo.completed ? false : true;
+//   let res2 = await agent.get("/");
+//   csrfToken = extractCsrfToken(res2);
+
+//   const response = await agent.put(`/todos/${latestTodo.id}`).send({
+//     _csrf: csrfToken,
+//     completed: status,
+//   });
+//   const parsedUpdateResponse = JSON.parse(response.text);
+//   expect(parsedUpdateResponse.completed).toBe(true);
+// }else{
+//   console.error('Expected JSON but received:', gropuedTodosResponse.text);
+// }
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   let res = await agent.get("/");
 
   // Extract CSRF token

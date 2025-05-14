@@ -8,7 +8,7 @@ var cookieParser = require("cookie-parser");
 const path = require("path")
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended:false}))
-// app.use(express.json());
+app.use(express.json());
 app.use(cookieParser('shh! some secret thing'))
 app.use(csrf("this_should_be_32_character_long", ["POST", "PUT", "DELETE"]));
 
@@ -85,7 +85,7 @@ app.put("/todos/:id", async function (request, response) {
   try {
     const updatedTodo = await todo.setCompletionStatus(request.body.completed);
   if (request.accepts("html")) {
-    return response.redirect(`/todos/${request.params.id}`);
+    return response.json(updatedTodo);
   }else{
     return response.status(302).json(updatedTodo);
   }
