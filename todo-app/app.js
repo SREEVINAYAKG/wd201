@@ -92,6 +92,9 @@ passport.use(new localStrategy({
 
 app.get("/", async function (request, response) {
   // response.send("Hello World");
+    if (request.isAuthenticated()) {
+    return response.redirect("/todos");
+    }
     response.render('index',{
       title:"Todo application",
       csrfToken:request.csrfToken(),
@@ -143,6 +146,10 @@ app.post("/users",async(request,response)=>{
     // console.log("firstName",request.body.firstName);
     if(request.body.firstName.length === 0){
       request.flash("error","Please enter a first name");
+      return response.redirect("/signup");
+    }
+    if(request.body.password.length === 0){
+      request.flash("error","Please enter a password");
       return response.redirect("/signup");
     }
     if(request.body.email.length === 0){
